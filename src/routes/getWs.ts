@@ -1,6 +1,6 @@
-import {Application} from "express-ws";
-import {WebSocket} from "ws";
-import {findUserById} from "../repositories/userRepository";
+import { Application } from "express-ws";
+import { WebSocket } from "ws";
+import { findUserById } from "../repositories/userRepository";
 
 
 export function getWs(app: Application, sockets: Map<string, WebSocket>) {

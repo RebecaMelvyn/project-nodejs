@@ -1,4 +1,4 @@
-import {Application} from "express-ws";
+import { Application } from "express-ws";
 import path from "path";
 
 

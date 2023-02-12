@@ -1,6 +1,8 @@
 const messageList = document.getElementById('message-list');
 const chatStatus = document.getElementById('chat-status');
 
+
+
 function addMessage(message) {
   const messageElement = document
     .createElement('div');
@@ -29,15 +31,16 @@ function connect() {
 
   ws.onmessage = (event) => {
     console.log('Message from server', event.data);
-    const { type, data } = JSON.parse(event.data);
-    console.log(data);
-    if (type === 'reply') {
-      addMessage(
-        data.user.name,
-        data.msg
-      );
-    }
+    addMessage(event.data);
   };
+  //const { type, data } = JSON.parse(event.data);
+  //console.log(data);
+  // if (type === 'reply') {
+  //    addMessage(
+  //     data.user.name,
+  //    data.msg
+  //  );
+  //  }
 }
 
 connect()

@@ -6,16 +6,40 @@
   <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Login</title>
+  <title>Profile</title>
 </head>
 
 <body>
-  <h1>Login</h1>
-  <form method="POST" action="/login">
-    <input type="email" name="email" placeholder="Email" /><br>
-    <button type="submit">Login</button>
+  <h1>Profile</h1>
+
+  <h3 id="nameSSID">
+
+  </h3>
+
+  <a style="background: #2972d8;" href="/">Retour</a>
+  <a style="background: #c23030;" href="/logout">logout</a>
+
+  <h2>My account</h2>
+  <p>
+
+  </p>
+
+  <script>
+    console.log(signedCookies);
+    document.getElementById("nameSSID").innerHTML = name;
+  </script>
+
+  <form method="POST" action="/profile">
+    <input type="text" name="name" value=<%=user.name %> />
+    <input type="email" name="email" value=<%=user.email %> />
+    <button style="background: #3dac44;" type="submit">change info</button>
   </form>
-  <a href="/register">Dont have account ?</a>
+
+  <form method="POST" action="/delete-profile">
+    <button style="background: #c23030;" type="submit">Supprimer mon compte</button>
+  </form>
+
+
 </body>
 <style>
   body {
@@ -25,6 +49,10 @@
   h1 {
     margin: 2%;
     margin-bottom: 5%;
+  }
+
+  h2 {
+    margin-top: 5%;
   }
 
   form {
@@ -41,16 +69,18 @@
     outline: none;
   }
 
+  a,
   button {
-    background: #2972d8;
     border: none;
     border-radius: 10px;
     padding: 1%;
     color: #fff;
+    text-decoration: none;
     transition: all 0.4s;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   }
 
+  a:hover,
   button:hover {
     cursor: pointer;
     scale: 1.1;

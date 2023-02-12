@@ -6,16 +6,26 @@
   <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Login</title>
+  <link rel="stylesheet" type="text/css" src="../public/styles.css">
+  <title>My Chat app</title>
 </head>
+<header>
+  <h3>Bonjour <%= user.name %>
+  </h3>
+</header>
 
 <body>
-  <h1>Login</h1>
-  <form method="POST" action="/login">
-    <input type="email" name="email" placeholder="Email" /><br>
-    <button type="submit">Login</button>
-  </form>
-  <a href="/register">Dont have account ?</a>
+  <h1>My chat app</h1>
+  <a style="background: #2972d8;" href="/profile">Mon profil</a>
+  <a style="background: #3dac44;" href="/chat">Chat</a>
+  <a style="background: #c23030;" href="/logout">logout</a>
+  <div>
+
+    <h2>Feed</h2>
+    <div></div>
+  </div>
+
+
 </body>
 <style>
   body {
@@ -24,7 +34,13 @@
 
   h1 {
     margin: 2%;
+    margin-top: -5%;
     margin-bottom: 5%;
+  }
+
+  h3 {
+    text-align: initial;
+    margin: 3%;
   }
 
   form {
@@ -41,17 +57,17 @@
     outline: none;
   }
 
-  button {
-    background: #2972d8;
+  a {
     border: none;
     border-radius: 10px;
     padding: 1%;
     color: #fff;
+    text-decoration: none;
     transition: all 0.4s;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   }
 
-  button:hover {
+  a:hover {
     cursor: pointer;
     scale: 1.1;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
